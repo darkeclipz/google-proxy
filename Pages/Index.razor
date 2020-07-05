@@ -12,7 +12,8 @@
     <input id="search" type="text" 
         placeholder="What are you looking for?" 
         value="@Query"
-        @onchange="async (args) => await OnSearchChangeAsync(args)"/>
+        @onchange="async (args) => await OnSearchChangeAsync(args)"
+        @onkeydown="(args) => OnKeyDown(args)"/>
 </div>
 
 @if(!HasResults && !IsSearching)
@@ -82,5 +83,13 @@ else
         Results = null;
         Query = string.Empty;
         JSRuntime.InvokeVoidAsync("focus");
+    }
+
+    private void OnKeyDown(KeyboardEventArgs args)
+    {
+        if(args.Key == "Escape") 
+        {
+            Clear();
+        }
     }
 }
