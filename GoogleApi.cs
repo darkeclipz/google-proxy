@@ -5,7 +5,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace GoogleProxy
 {
@@ -14,7 +16,7 @@ namespace GoogleProxy
         public static async Task<IEnumerable<Uri>> GetSearchResultsAsync(string query)
         {
             return await Task.Run(() => {
-                var url = GetUrl(query);
+                var url = GetUrl(HttpUtility.UrlEncode(query));
                 using var wc = new WebClient();
                 var html = wc.DownloadString(url);
                 var regex = new Regex("https?:\\/\\/[a-zA-Z0-9/\\?=\\-&_#.;]*\"");
@@ -22,6 +24,14 @@ namespace GoogleProxy
                 return matches
                     .Select(m => new Uri(SanitizeUrl(m.Value)))
                     .Where(url => !url.Host.Contains("google"));
+            });
+        }
+
+        public static async Task<(string, string)> GetMetadataAsync(string url)
+        {
+            return await Task.Run(() => {
+                Thread.Sleep(750);
+                return ("Title", "Description");
             });
         }
 

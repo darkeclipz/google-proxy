@@ -2,8 +2,22 @@
     <div class="result fade-in">
         <div class="host">
             <b>@Uri.Host</b>
-            <small class="path">@Uri.PathAndQuery</small>
+            <small class="path">@ClampLength(Uri.PathAndQuery, 60)</small>
         </div>
+        @* @if(!IsLoadingMetadata)
+        {
+            <div class="fade-in">
+                <div>@Metadata.Title</div>
+                <div>@Metadata.Description</div>
+            </div>
+        }
+        else
+        {
+            <div class="placeholder">
+                <div>Title</div>
+                <div>Description</div>
+            </div>
+        } *@
     </div>
 </a>
 
@@ -11,4 +25,22 @@
 @code {
     [Parameter]
     public Uri Uri { get; set; }
+
+    private (string Title, string Description) Metadata { get; set; }
+
+    private bool IsLoadingMetadata { get; set; } = true;
+
+    private string ClampLength(string input, int maxLength) 
+        => (input.Length > maxLength)
+            ? input[0..(maxLength - 1)] + "..."
+            : input;
+
+    /*protected override void OnInitialized()
+    {
+        Task.Run(() => {
+            Metadata = GoogleApi.GetMetadataAsync(Uri.OriginalString).Result;
+            IsLoadingMetadata = false;
+            InvokeAsync(StateHasChanged);
+        });
+    }*/
 }
