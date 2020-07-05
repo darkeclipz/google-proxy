@@ -73,7 +73,7 @@ else
         }
         else 
         {
-            Results = await GoogleApi.GetSearchResultsAsync(Query);
+            Results = await WebApi.GetSearchResultsAsync(Query);
         }
         IsSearching = false;
     }

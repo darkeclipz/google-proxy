@@ -11,7 +11,7 @@ using System.Web;
 
 namespace GoogleProxy
 {
-    public static class GoogleApi
+    public static class WebApi
     {
         public static async Task<IEnumerable<Uri>> GetSearchResultsAsync(string query)
         {
