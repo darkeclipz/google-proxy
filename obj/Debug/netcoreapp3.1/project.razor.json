@@ -13,14 +13,14 @@
     "TagHelpers": [
       {
         "Kind": "Components.Component",
-        "Name": "GoogleProxy.Pages.Index",
+        "Name": "GoogleProxy.App",
         "AssemblyName": "GoogleProxy",
         "Documentation": null,
         "TagOutputHint": null,
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Index",
+            "TagName": "App",
             "ParentTag": null,
             "TagStructure": 0,
             "Attributes": [],
@@ -32,19 +32,19 @@
         "Diagnostics": [],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "GoogleProxy.Pages.Index"
+          "Common.TypeName": "GoogleProxy.App"
         }
       },
       {
         "Kind": "Components.Component",
-        "Name": "GoogleProxy.Pages.Index",
+        "Name": "GoogleProxy.App",
         "AssemblyName": "GoogleProxy",
         "Documentation": null,
         "TagOutputHint": null,
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "GoogleProxy.Pages.Index",
+            "TagName": "GoogleProxy.App",
             "ParentTag": null,
             "TagStructure": 0,
             "Attributes": [],
@@ -56,7 +56,7 @@
         "Diagnostics": [],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "GoogleProxy.Pages.Index",
+          "Common.TypeName": "GoogleProxy.App",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -190,14 +190,14 @@
       },
       {
         "Kind": "Components.Component",
-        "Name": "GoogleProxy.App",
+        "Name": "GoogleProxy.Pages.Index",
         "AssemblyName": "GoogleProxy",
         "Documentation": null,
         "TagOutputHint": null,
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "App",
+            "TagName": "Index",
             "ParentTag": null,
             "TagStructure": 0,
             "Attributes": [],
@@ -209,19 +209,19 @@
         "Diagnostics": [],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "GoogleProxy.App"
+          "Common.TypeName": "GoogleProxy.Pages.Index"
         }
       },
       {
         "Kind": "Components.Component",
-        "Name": "GoogleProxy.App",
+        "Name": "GoogleProxy.Pages.Index",
         "AssemblyName": "GoogleProxy",
         "Documentation": null,
         "TagOutputHint": null,
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "GoogleProxy.App",
+            "TagName": "GoogleProxy.Pages.Index",
             "ParentTag": null,
             "TagStructure": 0,
             "Attributes": [],
@@ -233,7 +233,7 @@
         "Diagnostics": [],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "GoogleProxy.App",
+          "Common.TypeName": "GoogleProxy.Pages.Index",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -420,85 +420,6 @@
       },
       {
         "Kind": "Components.Component",
-        "Name": "GoogleProxy.Shared.SearchResult",
-        "AssemblyName": "GoogleProxy",
-        "Documentation": null,
-        "TagOutputHint": null,
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SearchResult",
-            "ParentTag": null,
-            "TagStructure": 0,
-            "Attributes": [],
-            "Diagnostics": []
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Uri",
-            "TypeName": "System.Uri",
-            "IsEnum": false,
-            "IndexerNamePrefix": null,
-            "IndexerTypeName": null,
-            "Documentation": null,
-            "Diagnostics": [],
-            "Metadata": {
-              "Common.PropertyName": "Uri"
-            },
-            "BoundAttributeParameters": []
-          }
-        ],
-        "AllowedChildTags": [],
-        "Diagnostics": [],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "GoogleProxy.Shared.SearchResult"
-        }
-      },
-      {
-        "Kind": "Components.Component",
-        "Name": "GoogleProxy.Shared.SearchResult",
-        "AssemblyName": "GoogleProxy",
-        "Documentation": null,
-        "TagOutputHint": null,
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "GoogleProxy.Shared.SearchResult",
-            "ParentTag": null,
-            "TagStructure": 0,
-            "Attributes": [],
-            "Diagnostics": []
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Uri",
-            "TypeName": "System.Uri",
-            "IsEnum": false,
-            "IndexerNamePrefix": null,
-            "IndexerTypeName": null,
-            "Documentation": null,
-            "Diagnostics": [],
-            "Metadata": {
-              "Common.PropertyName": "Uri"
-            },
-            "BoundAttributeParameters": []
-          }
-        ],
-        "AllowedChildTags": [],
-        "Diagnostics": [],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "GoogleProxy.Shared.SearchResult",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "Kind": "Components.Component",
         "Name": "GoogleProxy.Shared.SurveyPrompt",
         "AssemblyName": "GoogleProxy",
         "Documentation": null,
@@ -573,6 +494,85 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "GoogleProxy.Shared.SurveyPrompt",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "Kind": "Components.Component",
+        "Name": "GoogleProxy.Shared.SearchResult",
+        "AssemblyName": "GoogleProxy",
+        "Documentation": null,
+        "TagOutputHint": null,
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "SearchResult",
+            "ParentTag": null,
+            "TagStructure": 0,
+            "Attributes": [],
+            "Diagnostics": []
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Uri",
+            "TypeName": "System.Uri",
+            "IsEnum": false,
+            "IndexerNamePrefix": null,
+            "IndexerTypeName": null,
+            "Documentation": null,
+            "Diagnostics": [],
+            "Metadata": {
+              "Common.PropertyName": "Uri"
+            },
+            "BoundAttributeParameters": []
+          }
+        ],
+        "AllowedChildTags": [],
+        "Diagnostics": [],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "GoogleProxy.Shared.SearchResult"
+        }
+      },
+      {
+        "Kind": "Components.Component",
+        "Name": "GoogleProxy.Shared.SearchResult",
+        "AssemblyName": "GoogleProxy",
+        "Documentation": null,
+        "TagOutputHint": null,
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "GoogleProxy.Shared.SearchResult",
+            "ParentTag": null,
+            "TagStructure": 0,
+            "Attributes": [],
+            "Diagnostics": []
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Uri",
+            "TypeName": "System.Uri",
+            "IsEnum": false,
+            "IndexerNamePrefix": null,
+            "IndexerTypeName": null,
+            "Documentation": null,
+            "Diagnostics": [],
+            "Metadata": {
+              "Common.PropertyName": "Uri"
+            },
+            "BoundAttributeParameters": []
+          }
+        ],
+        "AllowedChildTags": [],
+        "Diagnostics": [],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "GoogleProxy.Shared.SearchResult",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },

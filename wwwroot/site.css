@@ -172,8 +172,21 @@ a:visited b {
 
 @media all and (max-width: 800px)  {
     body {
-        max-width: uset;
         width: calc(100% - 2*48px);
         padding: 0 48px;
     }
-  }
+}
+
+@media all and (max-width: 650px)  {
+    a b {
+        display: block;
+    }
+
+    .footer {
+        display: block;
+    }
+
+    .footer div {
+        text-align: center !important;
+    }
+}
