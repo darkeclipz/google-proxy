@@ -1,0 +1,14 @@
+<a href="@Uri.OriginalString" target="_new">
+    <div class="result fade-in">
+        <div class="host">
+            <b>@Uri.Host</b>
+        </div>
+        <div class="path">@Uri.PathAndQuery</div>
+    </div>
+</a>
+
+
+@code {
+    [Parameter]
+    public Uri Uri { get; set; }
+}

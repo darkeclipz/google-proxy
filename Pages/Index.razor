@@ -1,0 +1,66 @@
+﻿@page "/"
+@inject IJSRuntime JSRuntime
+
+<h1 @onclick="Clear">gproxy.io</h1>
+
+<div class="search">
+    <input id="search" type="text" 
+        placeholder="What are you looking for?" 
+        value="@Query"
+        @onchange="async (args) => await OnSearchChangeAsync(args)"/>
+</div>
+
+@if(!HasResults && !IsSearching)
+{
+    <h2>Search on Google while hiding your device and/or location.</h2>
+    <p>
+        Your search query is used to retrieve the Google search results on the server.
+        The results are then displayed here. Your device doesn't make a request to
+        the servers of Google, but we do it instead. Enjoy privacy while using Google.
+    </p>
+}
+else if(IsSearching)
+{
+    <div class="searching fade-in">
+        Searching ...
+    </div>
+}
+else 
+{
+    <h2>@Results.Count() Results</h2>
+    foreach(var result in Results)
+    {
+        <SearchResult Uri="@result" />
+    }
+}
+
+@code {
+    private IEnumerable<Uri> Results { get; set; }
+    private bool HasResults { get => Results != null && Results.Count() > 0; }
+    private bool IsSearching { get; set; }
+    private string Query { get; set; }
+
+    protected override void OnAfterRender(bool firstRender) 
+    {
+        if(firstRender) 
+        {
+            JSRuntime.InvokeVoidAsync("focus");
+        }
+    }
+
+    private async Task OnSearchChangeAsync(ChangeEventArgs args) 
+    {
+        IsSearching = true;
+        Results = new List<Uri>();
+        Query = args.Value.ToString();
+        Results = await GoogleApi.GetSearchResultsAsync(Query);
+        IsSearching = false;
+    }
+
+    private void Clear() 
+    {
+        Results = null;
+        Query = string.Empty;
+        JSRuntime.InvokeVoidAsync("focus");
+    }
+}

@@ -1,0 +1,10 @@
+﻿@page "/search/{Query}"
+
+<h1>Search results</h1>
+
+<span>@Query</span>
+
+@code {
+    [Parameter]
+    public string Query { get; set; }
+}
