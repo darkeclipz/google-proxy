@@ -1,3 +1,10 @@
+@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+
+:root {
+    --primary-color: #b12cff;
+    --accent-color: #1f6bff;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -29,15 +36,32 @@ a:visited {
 h1 {
     font-family: 'MuseoModerno', cursive;
     text-align: center;
-    color: rgb(156, 119, 255);
-    font-size: 46pt;
+    color: var(--primary-color);
+    font-size: 28pt;
     margin-bottom: 48px;
-    text-shadow: 2px 2px 2px black;
-    cursor: pointer;
+    margin-top: 0;
+    padding-top: 0;
+    line-height: 16px;
 }
 
 h2 { 
     font-size: 13pt;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    cursor: pointer;
+}
+
+.header div {
+    display: block;
+}
+
+.logo {
+    width: 128px;
+    height: 128px;
 }
 
 .search {
@@ -45,7 +69,7 @@ h2 {
 }
 
 .searching {
-    margin: 24px 0;
+    margin: 72px 0;
     text-align: center;
     font-size: 22pt;
     color: #888;
@@ -67,6 +91,37 @@ h2 {
     background-color: #333;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
+    transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+.result:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    background-color: #444;
+}
+
+a b {
+    color: var(--accent-color);
+}
+
+a:visited b {
+    color: #666;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+}
+
+.info-icon {
+    font-size: 42pt;
+    color: rgb(85, 85, 85);
+    margin: 16px 0 16px 24px;
+}
+
+.footer {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
 }
 
 #blazor-error-ui {
