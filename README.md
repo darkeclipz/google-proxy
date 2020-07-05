@@ -1,4 +1,4 @@
-![Logo](gproxy.png)
+![Logo](gproxy.PNG)
 
 # What is gproxy?
 
